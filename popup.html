@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      width: 230px;
+      padding: 14px;
+      font-family: 'Segoe UI', 'Yu Gothic UI', sans-serif;
+      background: #f0f0f0;
+      color: #333;
+    }
+    .title {
+      font-size: 11px;
+      color: #888;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+    .mode-group {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 8px 4px;
+      font-size: 12px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      background: #fff;
+      cursor: pointer;
+      color: #666;
+      line-height: 1.3;
+      transition: all 0.12s;
+    }
+    .mode-btn:hover { border-color: #4a7fc1; color: #4a7fc1; }
+    .mode-btn.active {
+      background: #4a7fc1;
+      border-color: #4a7fc1;
+      color: #fff;
+      font-weight: bold;
+    }
+    .mode-icon { font-size: 14px; display: block; margin-bottom: 2px; }
+    .hint {
+      font-size: 10px;
+      color: #999;
+      margin-bottom: 12px;
+      line-height: 1.5;
+      min-height: 30px;
+    }
+    .capture-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 13px;
+      font-weight: bold;
+      background: #4a7fc1;
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: background 0.12s;
+    }
+    .capture-btn:hover { background: #3d6ea8; }
+    .capture-btn:disabled { background: #aaa; cursor: default; }
+    .status {
+      font-size: 10px;
+      color: #4a7fc1;
+      text-align: center;
+      margin-top: 6px;
+      height: 14px;
+    }
+  </style>
+</head>
+<body>
+  <p class="title">シンプルOGPキャプチャ</p>
+  <div class="mode-group">
+    <button class="mode-btn" id="btn-resize" data-mode="resize">
+      <span class="mode-icon">🔲</span>リサイズ
+    </button>
+    <button class="mode-btn" id="btn-crop" data-mode="crop">
+      <span class="mode-icon">✂️</span>クロップ
+    </button>
+  </div>
+  <p class="hint" id="hint-text"></p>
+  <button class="capture-btn" id="btn-capture">📷 キャプチャ</button>
+  <p class="status" id="status-text"></p>
+  <script src="popup.js"></script>
+</body>
+</html>
